@@ -1,5 +1,6 @@
 import { eventsData} from "../data";
 import React, { useState, useEffect } from 'react';
+import FullScreenBackground from "./FullScreenBackground";
 
 const EventsPage = ({ setActivePage, setSelectedEvent, colors }) => {
   const [expandedCategory, setExpandedCategory] = useState(null);
@@ -14,6 +15,9 @@ const EventsPage = ({ setActivePage, setSelectedEvent, colors }) => {
   };
 
   return (
+	<>
+	<FullScreenBackground color={colors.background} />
+	
 	<div className="flex flex-col items-center p-4 sm:p-8 transition-colors duration-500" style={{ backgroundColor: colors.background }}>
 	  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8" style={{ fontFamily: 'Modo Badoni', color: colors.text }}>Upcoming Events</h1>
 	  <div className="w-full max-w-lg md:max-w-2xl rounded-xl overflow-hidden shadow-2xl" style={{backgroundColor: colors.card}}>
@@ -47,6 +51,7 @@ const EventsPage = ({ setActivePage, setSelectedEvent, colors }) => {
 		))}
 	  </div>
 	</div>
+	</>
   );
 };
 
