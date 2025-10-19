@@ -142,25 +142,31 @@ const App = () => {
     localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
   }, [isDarkTheme]);
 
-  if (isLoading) {
-    return (
-      <div style={{
+if (isLoading) {
+  return (
+    <div
+      style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
-        width: '100vw',
+        flexDirection: 'column',
+        height: '100dvh',
+        width: '100%',
+        overflow: 'hidden',
         backgroundColor: '#FFFBFA',
         color: '#04315F',
-        fontFamily: 'Modo Badoni',
-        fontSize: 'clamp(2rem, 10vw, 4rem)',
+        fontFamily: 'Modo Badoni, serif',
+        fontSize: 'clamp(2rem, 8vw, 3.5rem)',
         textAlign: 'center',
-        padding: '1rem'
-      }}>
-        <h1>Loading EQUINOX...</h1>
-      </div>
-    );
-  }
+        padding: '1rem',
+        boxSizing: 'border-box',
+      }}
+    >
+      <h1 style={{ margin: 0 }}>Loading EQUINOX...</h1>
+    </div>
+  );
+}
+
 
   return (
     <div className="font-sans flex flex-col min-h-screen w-screen overflow-x-hidden relative">
