@@ -1,6 +1,6 @@
-const IndividualUrl = 'http://127.0.0.1:8000/Web_IdR';
-const InstitutionUrl =  'http://127.0.0.1:8000/Web_InR';
-const LookupUrl = 'http://127.0.0.1:8000/lookup'
+const IndividualUrl = 'https://equinoxbackend-96ub.onrender.com/Web_IdR';
+const InstitutionUrl =  'https://equinoxbackend-96ub.onrender.com/Web_InR';
+const LookupUrl = 'https://equinoxbackend-96ub.onrender.com/lookup'
 
 export const sendRegistrationDataIndividual = async (registrationData) => {
   try {

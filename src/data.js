@@ -103,7 +103,7 @@ function parse_fetched_events_data(data){
 }
 
 function LoadEventData(){
-  fetch('http://127.0.0.1:8000/all_events').then(
+  fetch('https://equinoxbackend-96ub.onrender.com/all_events').then(
     response =>{
       if (response.status != 200){
         throw new Error(`error occured in fetching events: ${response.status}`);
