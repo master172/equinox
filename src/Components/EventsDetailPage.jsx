@@ -40,7 +40,7 @@ const EventDetailPage = ({ event, onBack, colors }) => {
               <span className="font-semibold" style={{ color: colors.tertiary }}>Max teams per institution:</span> {event.num_teams}
             </li>
             <li className="text-base sm:text-lg" style={{ fontFamily: 'Raleway' }}>
-              <span className="font-semibold" style={{ color: colors.tertiary }}>Fees:</span> {event.fees} <span style={{ opacity: 1.0 }}>per person</span>
+              <span className="font-semibold" style={{ color: colors.tertiary }}>Fees:</span> {event.fees} <span style={{ opacity: 1.0 }}>per team</span>
             </li>
             <li className="text-base sm:text-lg" style={{ fontFamily: 'Raleway' }}>
               <span className="font-semibold" style={{ color: colors.tertiary }}>Contact No:</span> {event.contact_no}
