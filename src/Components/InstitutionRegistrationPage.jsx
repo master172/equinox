@@ -228,14 +228,18 @@ const InstitutionalRegistrationPage = ({ setActivePage, setMessage, colors, init
                 <button
                   disabled={submitDisabled}
                   type="submit"
-                  className="px-8 py-4 text-lg font-bold rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  className={`px-8 py-4 text-lg font-bold rounded-full shadow-lg transform transition-all duration-300
+                    ${submitDisabled 
+                      ? "bg-gray-400 text-gray-700 cursor-not-allowed scale-95" 
+                      : "hover:scale-105 active:scale-95"}
+                  `}
                   style={{
-                    backgroundColor: colors.secondary,
-                    color: colors.text,
-                    border: `2px solid ${colors.secondary}`,
+                    backgroundColor: submitDisabled ? "#b0b0b0" : colors.secondary,
+                    color: submitDisabled ? "#555" : colors.text,
+                    border: `2px solid ${submitDisabled ? "#b0b0b0" : colors.secondary}`,
                   }}
                 >
-                  Submit
+                  {submitDisabled ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </div>
