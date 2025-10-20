@@ -161,6 +161,29 @@ const App = () => {
       </div>
     );
   }
+    // 1. Set initial page from hash
+  useEffect(() => {
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash) setActivePage(initialHash);
+  }, []);
+
+  // 2. Push new states into browser history
+  useEffect(() => {
+    if (!isLoading) {
+      window.history.pushState({ page: activePage }, '', `#${activePage}`);
+    }
+  }, [activePage, isLoading]);
+
+  // 3. Listen for browser Back/Forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const page = window.location.hash.replace('#', '');
+      setActivePage(page || 'home');
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
 
   return (
     <div className="font-sans flex flex-col min-h-screen w-screen overflow-x-hidden relative">
